@@ -1,7 +1,7 @@
 <h1>My Events</h1>
 
 <div id = "my_events">
-  <% @my_events.each do |event| %>
+  <% @my_events.reverse.each do |event| %>
     <div>
       <%= link_to event.name, event %>
     </div>

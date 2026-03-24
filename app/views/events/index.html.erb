@@ -1,1 +1,9 @@
 <h1>List of all events</h1>
+
+<div id = "all_events">
+  <% @events.reverse.each do |event| %>
+    <div>
+      <%= link_to event.name, event %>
+    </div>
+  <% end %>
+</div>
