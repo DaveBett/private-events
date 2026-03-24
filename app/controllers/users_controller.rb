@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
+  before_action :authenticate_user!
 
   def show
-    @events = @user.created_events.all
+    @my_events = current_user.created_events.all
   end
 end
