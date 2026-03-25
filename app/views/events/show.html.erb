@@ -1,13 +1,16 @@
-<h3><%=@event.location%></h3>
-<p> <%=@event.date%> </p>
+<h3><%=@event.name%></h3>
+<p><%=@event.location%></p>
+<p><%=@event.date%></p>
+
+<%= button_to "Attend Event", event_attendances_path(@event), method: :post %>
 
 <section>
     <h3>List of attendees:</h3>
     <ul>
         <% @event.attendees.each do |person| %>
         <li>
-            <%= person.email %>
+            <%= person.name %>
         </li>
-        <%end%>
+        <% end %>
     </ul>
 </section>
