@@ -1,7 +1,13 @@
-<h1>
-  <%= @event.name %>
-</h1>
+<h3><%=@event.location%></h3>
+<p> <%=@event.date%> </p>
 
-Location: <%= @event.location %> <br>
-Date: <%= @event.date %> <br>
-Evednt host: <%= @event.creator.name %>
+<section>
+    <h3>List of attendees:</h3>
+    <ul>
+        <% @event.attendees.each do |person| %>
+        <li>
+            <%= person.email %>
+        </li>
+        <%end%>
+    </ul>
+</section>
