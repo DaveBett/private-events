@@ -9,12 +9,24 @@
 </div>
 
 <div id = "attended_events">
-    <h3>Events attended:</h3>
-    <ul>
-        <% @attended.each do |event| %>
+  <div id = "Upcoming_events">
+    <h3>Upcoming Events:</h3>
+    <% @attended.each do |event| %>
+      <% if event.date >= Time.current %>
         <li>
-            <%= link_to event.name, event %>
+          <%= link_to event.name, event %>
         </li>
-        <% end %>
-    </ul>
-</div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id = "past_events">
+  <h3>Attended Events:</h3>
+    <% @attended.each do |event| %>
+      <% if event.date < Time.current %>
+        <li>
+          <%= link_to event.name, event %>
+        </li>
+      <% end %>
+    <% end %>
+  </div>
