@@ -7,3 +7,14 @@
     </div>
   <% end %>
 </div>
+
+<div id = "attended_events">
+    <h3>Events attended:</h3>
+    <ul>
+        <% @attended.each do |event| %>
+        <li>
+            <%= link_to event.name, event %>
+        </li>
+        <% end %>
+    </ul>
+</div>

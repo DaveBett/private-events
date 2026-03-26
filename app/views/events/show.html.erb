@@ -4,7 +4,7 @@
 
 <%= button_to "Attend Event", event_attendances_path(@event), method: :post %>
 
-<section>
+<div id = "attendees">
     <h3>List of attendees:</h3>
     <ul>
         <% @event.attendees.each do |person| %>
@@ -13,4 +13,4 @@
         </li>
         <% end %>
     </ul>
-</section>
+</div>
